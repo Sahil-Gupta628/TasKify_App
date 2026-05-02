@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,252 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+/* ── App shell ── */
+.tk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.tk-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+/* ── Theme toggle button ── */
+.tk-theme-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.tk-theme-btn:hover {
+  background: var(--border);
+}
+
+/* ── Auth pages (Login / Register) ── */
+.tk-auth-wrap {
+  max-width: 420px;
+  margin: 4rem auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.tk-auth-wrap h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.tk-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+
+.tk-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.tk-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.tk-btn-primary {
+  background: var(--primary);
+  color: #fff;
+  width: 100%;
+}
+
+.tk-btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.tk-btn-sm {
+  padding: 5px 12px;
+  font-size: 0.82rem;
+}
+
+.tk-btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);              /* always follows theme text color */
+}
+.tk-btn-outline:hover {
+  background: var(--border);
+  color: var(--text);              /* keep text readable on hover too */
+}
+
+.tk-btn-danger {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+.tk-btn-danger:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* ── Extra: make sure ALL tk-btn variants never inherit white from Bootstrap ── */
+.tk-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+  /* Reset any Bootstrap interference */
+  box-shadow: none !important;
+  text-decoration: none;
+}
+
+/* ── Todo cards ── */
+.tk-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+}
+
+.tk-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tk-card.done {
+  opacity: 0.6;
+}
+
+/* ── Priority dot ── */
+.tk-priority-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Deadline badge ── */
+.tk-deadline {
+  font-size: 0.75rem;
+  padding: 2px 9px;
+  border-radius: 99px;
+  font-weight: 500;
+}
+
+.tk-deadline.ok {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.tk-deadline.overdue {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Dark mode badge adjustments */
+[data-theme="dark"] .tk-deadline.ok {
+  background: #1e3a5f;
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .tk-deadline.overdue {
+  background: #3b1111;
+  color: #fca5a5;
+}
+
+/* ── Category badge ── */
+.tk-cat-badge {
+  font-size: 0.73rem;
+  padding: 2px 9px;
+  border-radius: 99px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+/* ── Add form ── */
+.tk-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.tk-form h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.tk-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.tk-form-row .tk-input {
+  margin-bottom: 0;
+  flex: 1 1 160px;
+}
+
+.tk-select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* ── Error text ── */
+.tk-error {
+  color: var(--danger);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Responsive: stack form row on mobile ── */
+@media (max-width: 540px) {
+  .tk-form-row {
+    flex-direction: column;
+  }
+
+  .tk-form-row .tk-input,
+  .tk-form-row .tk-select {
+    flex: 1 1 100%;
   }
 }
