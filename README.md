@@ -8,10 +8,10 @@
 
 ## 📸 Screenshots
 
-| Light Theme
+- Light Theme
 | ![Login](images/login-light.png) 
 
-| Dark Theme |
+- Dark Theme |
 | ![Login](images/login-dark.png) 
 
 ---
