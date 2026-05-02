@@ -68,7 +68,7 @@ TasKify_App/
 │   ├── models.py        # SQLAlchemy models (User, Category, ToDo)
 │   ├── database.py      # DB engine and session setup
 │   ├── requirements.txt
-│   └── .env             # Secret key (not pushed to GitHub)
+│   └── .env             # Secret key
 └── frontend/
     └── src/
         ├── App.js           # Routing, theme toggle, auth state
